@@ -5,6 +5,58 @@
 ![badge](https://github.com/prasunroy/nnview/blob/master/assets/badge_1.svg)
 ![badge](https://github.com/prasunroy/nnview/blob/master/assets/badge_2.svg)
 
+## Installation
+#### Option 1: Install using pip
+```
+pip install git+https://github.com/prasunroy/nnview.git
+```
+#### Option 2: Install from source
+```
+git clone https://github.com/prasunroy/nnview.git
+cd nnview
+python setup.py install
+```
+
+## LayerVisualizer
+```python
+CLASS nnview.visualization.LayerVisualizer
+```
+#### Example
+```python
+import torchvision
+from PIL import Image
+
+model = torchvision.models.vgg16(pretrained=True)
+image = Image.open('assets/test.jpg').convert('RGB')
+
+transforms = torchvision.transforms.Compose([
+    torchvision.transforms.Resize((224, 224)),
+    torchvision.transforms.ToTensor(),
+    torchvision.transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
+])
+
+x = transforms(image)
+x = x.reshape((1,) + x.shape)
+```
+```python
+from nnview.visualization import LayerVisualizer
+
+visualizer = LayerVisualizer(model)
+visualizer.parse_input(x)
+visualizer.show()
+visualizer.save(out_dir='output/')
+```
+
+<p align='center'>
+  <b>Feature Maps of First Convolution Layer of VGG16</b>
+  <br />
+  <img src='https://github.com/prasunroy/nnview/raw/master/assets/layer_visualizer.jpg' />
+  <br />
+</p>
+
+## Acknowledgements
+Images from [Pixabay](https://pixabay.com) are used under [Creative Commons CC0 License](https://creativecommons.org/publicdomain/zero/1.0/deed.en).
+
 ## License
 MIT License
 
@@ -18,7 +70,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <br />
 <br />
-
-
 
 **Made with** :heart: **and GitHub**
