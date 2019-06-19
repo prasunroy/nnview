@@ -1,5 +1,5 @@
 # nnview
-**Visualization utilities for PyTorch.**
+**Visualization utilities for [PyTorch](https://pytorch.org).**
 <img align='right' height='100' src='https://github.com/prasunroy/nnview/blob/master/assets/logo.jpg' />
 
 ![badge](https://github.com/prasunroy/nnview/blob/master/assets/badge_1.svg)
