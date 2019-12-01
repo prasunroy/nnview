@@ -71,4 +71,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <br />
 
-**Made with** :heart: **and GitHub**.
+**Made with** :heart: **and GitHub**
